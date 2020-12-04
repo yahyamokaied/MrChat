@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "156039827256",
+    "firebase_url": "https://mrchat-ad947.firebaseio.com",
+    "project_id": "mrchat-ad947",
+    "storage_bucket": "mrchat-ad947.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156039827256:android:9505147d94dccc414cbbcd",
+        "android_client_info": {
+          "package_name": "com.yahyamokaied.clicks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156039827256-lqi48bs4oqpkm706svpe6s7pgcu8lhue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yahyamokaied.clicks",
+            "certificate_hash": "bb26d9ca8a33676094a5b8a7c0faecc8b857f82c"
+          }
+        },
+        {
+          "client_id": "156039827256-vldfdb7glah6pil51dt2tep2h8eq06rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlIXJSIziPvxOtsnnPVZW-mEzC-5w2R54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156039827256-vldfdb7glah6pil51dt2tep2h8eq06rl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "156039827256-gnuoq2pfgr0605rqhqrlstiujdes1hsj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yahyamokaied.Clicks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
