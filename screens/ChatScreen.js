@@ -8,10 +8,12 @@ import {
   AppColor, Icon, ChatItem, AppStyle, AppText, LoadingModal
       } from '../components';
 
+import MapModal from './MapModal';
+
 import { useSelector,useDispatch } from 'react-redux';
 import {
   getChat,startLoading1,stopLoading1,sendMessage,
-  getVibes,sendVibes,getBlockedUsers,setAllChat
+  getVibes,sendVibes,getBlockedUsers,setAllChat,setLocationStart
        } from '../redux/actions';
 
 import FastImage from 'react-native-fast-image';
@@ -27,6 +29,7 @@ const ChatScreen = ({ navigation }) => {
   const vibesLength = useSelector(state => state.chat.vibesLength);
   const isLoading1 = useSelector(state => state.chat.isLoading1);
   const blockedUsers = useSelector(state => state.chat.blockedUsers);
+
 
   const [currentMessage,setCurrentMessage] = useState(null);
 
@@ -109,6 +112,7 @@ const ChatScreen = ({ navigation }) => {
       style={styles.container} keyboardVerticalOffset={ Platform.OS === 'ios' ? (AppStyle.hh + AppStyle.ww) / 16 : (AppStyle.hh + AppStyle.ww) / 12
       }
       >
+    <MapModal />
 
       <View style={styles.inner} >
       {chatLength === 0 ?
@@ -132,8 +136,13 @@ const ChatScreen = ({ navigation }) => {
 
       <View style={styles.sendview} >
       <TouchableOpacity style={styles.iconview}
-      onPress={ () => { SendVibe ( userData.phoneNumber, user2.phoneNumber ) }}>
-      <Icon name="notifications" style={styles.icon} />
+      onPress={ () => { 
+        
+        //SendVibe ( userData.phoneNumber, user2.phoneNumber )
+        dispatch ( setLocationStart() );
+        
+        }}>
+      <Icon name="location" style={styles.icon} />
       </TouchableOpacity>
 
       <TextInput placeholder=".... Type here ...." style={styles.txtinput}

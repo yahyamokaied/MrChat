@@ -8,7 +8,9 @@ allConversations: {},
 chatLength: 0,
 allChat: {},
 vibesLength: 0,
-blockedUsers: []
+blockedUsers: [],
+isLocation: false,
+
 };
 
 function chatReducer (state = initalState, action) {
@@ -60,6 +62,20 @@ function chatReducer (state = initalState, action) {
         ...state,
         vibesLength: action.payload.vibesLength
            };
+
+
+       case ActionTypes.SET_LOCATIONSTART :
+        return {
+    ...state,
+    isLocation: true
+       };
+
+       case ActionTypes.SET_LOCATIONSTOP :
+        return {
+    ...state,
+    isLocation: false
+       };
+
 
            
            default:

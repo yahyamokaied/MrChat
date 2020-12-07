@@ -41,6 +41,15 @@ export const setAllVibes = vibesLength => ({
   payload: { vibesLength }
 });
 
+
+export const setLocationStart = () => ({
+  type : ActoinTypes.SET_LOCATIONSTART
+});
+
+export const setLocationStop = () => ({
+  type : ActoinTypes.SET_LOCATIONSTOP
+});
+
 //redux thunk
 
 export const getContactName = ( contacts,contact ) => {

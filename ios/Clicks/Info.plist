@@ -56,8 +56,14 @@
 	<string>required to take photos for your profile image</string>
 	<key>NSContactsUsageDescription</key>
 	<string>required to message you contacts, any number you contact with will be uploaded to MrChat server</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>required to share your location with your friends</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>required to share your location with your friends</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>required to share your location with your friends</string>
+
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>required to select profile photo from your gallery</string>
 	<key>UIAppFonts</key>
