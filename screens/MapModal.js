@@ -27,8 +27,17 @@ export default MapModal = () => {
   const isLocation = useSelector(state => state.chat.isLocation);
   const userData = useSelector(state => state.auth.userData);
   const user2 = useSelector(state => state.auth.user2);
+  var latitudeDel = 0.002;
+  var longitudeDel = 0.002;
+  
 
-  const [location, setLocation] = useState({latitude:0,longitude:0});
+  const [location, setLocation] = useState({
+    latitude: 0,
+    longitude: 0,
+    latitudeDelta: latitudeDel,
+    longitudeDelta: longitudeDel
+  });
+
   const [address, setAddress] = useState();
 
   useEffect(() => {
@@ -50,8 +59,10 @@ export default MapModal = () => {
             .then(latestLocation => {
               // Use the location here
               setLocation({
-                longitude:latestLocation.longitude,
-                latitude:latestLocation.latitude,
+                latitude: latestLocation.latitude,
+                longitude: latestLocation.longitude,
+                latitudeDelta: latitudeDel,
+                longitudeDelta: longitudeDel
               })
               getAddress (latestLocation.latitude,latestLocation.longitude);
             })
@@ -62,12 +73,13 @@ export default MapModal = () => {
 
 const getAddress = async ( lat,lng ) => {
   Geocoder.init(apiKey);
+  console.log("addressComponent",lat,lng);
 
     Geocoder.from({lat,lng})
 		.then(json => {
             var addressComponent = json.results[0].formatted_address;
             setAddress(addressComponent);
-			      console.log(addressComponent);
+			      console.log("addressComponent",addressComponent);
 		})
 		.catch(error => console.log("error getAddress",error));
 
@@ -77,10 +89,23 @@ const getAddress = async ( lat,lng ) => {
 const sendLocation = () => {
 
   dispatch ( sendMessage( userData.uid, userData.phoneNumber, userData.displayName, user2.phoneNumber, user2.userName,
-    ["mylocation",location.latitude,location.longitude,address]
+    ["mylocation",location.latitude, location.longitude, address]
     ) )
     dispatch ( setLocationStop () )
 };
+
+
+const changeMarker = (a,b) => {
+  setLocation({
+    latitude: a,
+    longitude: b,
+    latitudeDelta: latitudeDel,
+    longitudeDelta: longitudeDel
+  });
+  getAddress (a,b);
+  console.log("changeMarker",a,b);
+};
+
 
 
   return (
@@ -97,24 +122,20 @@ const sendLocation = () => {
      <MapView
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
        style={styles.map}
-       region={{
-         latitude: location.latitude,
-         longitude: location.longitude,
-         latitudeDelta: 0.001,
-         longitudeDelta: 0.002,
-       }}
+       region={location}
        ref= {ref => map = ref}
         showsUserLocation={true}
         showsMyLocationButton={true}
     >
     <Marker 
-    coordinate={{
-      latitude: location.latitude,
-      longitude: location.longitude
-      }}
+    coordinate={location}
       image={require('../assets/pin.png')}
       title="Marker"
       description="Description"
+      draggable
+      onDragEnd={ coordinate =>
+        {changeMarker(coordinate.nativeEvent.coordinate.latitude,coordinate.nativeEvent.coordinate.longitude)}
+      }
     >
 
 <Callout tooltip>
