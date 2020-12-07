@@ -5,14 +5,15 @@ import {
   AppButton, AppColor, AppStyle, AppText, Icon
 } from '../components';
 
-import { firebaseConfig } from '../Setup';
+import { apiKey } from '../Setup';
 
 import {useSelector, useDispatch} from 'react-redux';
 import { setLocationStop,sendMessage } from '../redux/actions';
 
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import RNLocation from 'react-native-location';
-import Geocoder from 'react-native-geocoder';
+
+import Geocoder from 'react-native-geocoding';
 
 RNLocation.configure({
     distanceFilter: 5.0
@@ -27,7 +28,7 @@ export default MapModal = () => {
   const userData = useSelector(state => state.auth.userData);
   const user2 = useSelector(state => state.auth.user2);
 
-  const [location, setLocation] = useState({latitude:0,longitude:0,});
+  const [location, setLocation] = useState({latitude:0,longitude:0});
   const [address, setAddress] = useState();
 
   useEffect(() => {
@@ -60,15 +61,15 @@ export default MapModal = () => {
   };
 
 const getAddress = async ( lat,lng ) => {
+  Geocoder.init(apiKey);
 
-  try {
-    Geocoder.fallbackToGoogle(firebaseConfig.apiKey);
-    let adress = await Geocoder.geocodePosition({lat,lng});
-    console.log(adress[0].formattedAddress)
-    setAddress(adress[0].formattedAddress)
-  } catch (error) {
-    console.log("error getAddress",error)
-  }
+    Geocoder.from({lat,lng})
+		.then(json => {
+            var addressComponent = json.results[0].formatted_address;
+            setAddress(addressComponent);
+			      console.log(addressComponent);
+		})
+		.catch(error => console.log("error getAddress",error));
 
 };
 

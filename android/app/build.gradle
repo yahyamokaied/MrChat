@@ -2,7 +2,6 @@ apply plugin: "com.android.application"
 apply plugin: 'com.google.gms.google-services'
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
-
 import com.android.build.OutputFile
 
 /**
@@ -202,11 +201,10 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
-
     implementation project(':react-native-contacts')
     implementation 'com.google.firebase:firebase-analytics:18.0.0'
     implementation 'com.google.firebase:firebase-auth:20.0.1'
+    implementation 'com.google.android.gms:play-services-base:19.6.0'
 
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"

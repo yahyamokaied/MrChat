@@ -21,4 +21,6 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 }
 
-export { firebaseConfig,firebase, auth, database, storage };
+const apiKey = "AIzaSyDjNC02maWLqTRkQNJe8cjhOIc_m5ndU00";
+
+export { apiKey,firebaseConfig,firebase, auth, database, storage };

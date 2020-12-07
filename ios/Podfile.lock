@@ -355,8 +355,6 @@ PODS:
   - React-jsinspector (0.63.3)
   - react-native-contacts (5.2.8):
     - React-Core
-  - react-native-geocoder (0.5.0):
-    - React
   - react-native-google-maps (0.27.1):
     - Google-Maps-iOS-Utils (= 2.1.0)
     - GoogleMaps (= 3.5.0)
@@ -523,7 +521,6 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-contacts (from `../node_modules/react-native-contacts`)
-  - react-native-geocoder (from `../node_modules/react-native-geocoder`)
   - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-location (from `../node_modules/react-native-location`)
   - react-native-maps (from `../node_modules/react-native-maps`)
@@ -623,8 +620,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-contacts:
     :path: "../node_modules/react-native-contacts"
-  react-native-geocoder:
-    :path: "../node_modules/react-native-geocoder"
   react-native-google-maps:
     :path: "../node_modules/react-native-maps"
   react-native-location:
@@ -727,7 +722,6 @@ SPEC CHECKSUMS:
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
   react-native-contacts: 7b5e16196278636030c3fbbb9505543984b01697
-  react-native-geocoder: 757427682892bb256f3b3745858cc90eba148a8e
   react-native-google-maps: 0a989abda71059db2caa98b9dacca7a8f38a47d0
   react-native-location: 9c53c0957756f7d70e8fdc76b1c7ed85867c8d0b
   react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
