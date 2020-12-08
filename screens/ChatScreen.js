@@ -104,7 +104,18 @@ const ChatScreen = ({ navigation }) => {
   const SendVibe = ( user, user2 ) => {
     dispatch ( sendVibes ( user, user2 ) );
   };
+
+  const sendGalery = () => {
+
+  };
+
+  const sendCamera = () => {
+
+  };
   
+  const sendVoice = () => {
+
+  };
 
   return (
       <KeyboardAvoidingView
@@ -137,13 +148,12 @@ const ChatScreen = ({ navigation }) => {
       <View style={styles.sendview} >
       <TouchableOpacity style={styles.iconview}
       onPress={ () => { 
-        
         //SendVibe ( userData.phoneNumber, user2.phoneNumber )
         dispatch ( setLocationStart() );
-        
         }}>
-      <Icon name="location" style={styles.icon} />
+      <Icon name="location" style={styles.icon}  />
       </TouchableOpacity>
+      
 
       <TextInput placeholder=".... Type here ...." style={styles.txtinput}
       placeholderTextColor={AppColor.LightGrayColor}
@@ -169,6 +179,11 @@ const ChatScreen = ({ navigation }) => {
       }
 
       </View>
+      <View style={styles.media} >
+      <Icon name="images" style={styles.icongallery}  onPress={ () => sendGalery() }/>
+      <Icon name="camera" style={styles.iconmedia}  onPress={ () => sendCamera() }/>
+      <Icon name="mic" style={styles.iconmedia}  onPress={ () => sendVoice() }/>
+      </View>
       </View>
       <LoadingModal loading={isLoading1} />
       </KeyboardAvoidingView>
@@ -191,12 +206,23 @@ const styles = StyleSheet.create({
       justifyContent: "space-around",
       paddingBottom: AppStyle.hh / 100,
   },
+  media:{
+    width:AppStyle.ww /2,
+    height:AppStyle.hh /18,
+    justifyContent:'space-between',
+    flexDirection:'row',
+    backgroundColor:'transparent',
+    position:'absolute',
+    bottom: AppStyle.hh / 15,
+    alignSelf:'center'
+  },
   sendview: {
       height: AppStyle.hh / 14, 
       paddingVertical: AppStyle.hh / 80, 
       width: AppStyle.ww,
       alignSelf:'center',
       borderTopWidth:0.2,
+      marginTop:AppStyle.hh / 40,
       borderColor:AppColor.SLightColor,
       backgroundColor:AppColor.WhiteColor,
       justifyContent:'center',
@@ -232,7 +258,19 @@ const styles = StyleSheet.create({
         alignItems:'center',
         alignSelf:'center'
       },
-  icon:{
+    iconmedia:{
+      fontSize:AppStyle.IconSize,
+      alignSelf:'center',
+      color:AppColor.SLightColor,
+      paddingVertical: 2
+    },
+    icongallery:{
+      fontSize:AppStyle.IconLarge,
+      alignSelf:'center',
+      color:AppColor.SLightColor,
+      paddingVertical: 2
+    },
+    icon:{
       fontSize:AppStyle.IconSmall,
       alignSelf:'center',
       color:AppColor.WhiteColor,

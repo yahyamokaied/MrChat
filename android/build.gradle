@@ -6,7 +6,7 @@ buildscript {
         minSdkVersion = 16
         compileSdkVersion = 30
         targetSdkVersion = 30
-        playServicesVersion = "19.6.0" // or find latest version
+        //playServicesVersion = "19.6.0" // or find latest version
         androidMapsUtilsVersion = "2.2.0"
 
 
@@ -16,7 +16,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath('com.android.tools.build:gradle:7.0.0-alpha02')
+        classpath('com.android.tools.build:gradle:4.1.1')
         classpath 'com.google.gms:google-services:4.3.3'
 
                 //classpath("com.android.tools.build:gradle:3.5.3")
