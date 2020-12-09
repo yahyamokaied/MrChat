@@ -155,7 +155,6 @@ return (
       borderWidth:0.5,
       marginLeft: AppStyle.ww / 20,
       paddingHorizontal: (AppStyle.ww + AppStyle.hh) / 120,
-      paddingTop: (AppStyle.ww + AppStyle.hh) / 160
     },
     right: {
       flex:1,
@@ -165,7 +164,6 @@ return (
       borderWidth:0.5,
       marginRight: AppStyle.ww / 20,
       paddingHorizontal: (AppStyle.ww + AppStyle.hh) / 120,
-      paddingTop: (AppStyle.ww + AppStyle.hh) / 160
   },
     img: {
       width: AppStyle.ww / 14,
@@ -178,10 +176,11 @@ return (
       marginHorizontal: AppStyle.ww / 30,
         },
         photo: {
-          width: AppStyle.ww / 1.3,
+          width:AppStyle.ww / 1.22,
           height: (AppStyle.hh + AppStyle.ww ) / 5,
           resizeMode:'contain',
           alignSelf: 'center',
+          marginLeft:AppStyle.ww / 30,
           borderRadius: AppStyle.ww / 40,
           marginVertical:AppStyle.hh / 100
             },
@@ -189,8 +188,8 @@ return (
           width:AppStyle.ww / 1.22,
           height:AppStyle.hh / 3.7,
           alignSelf:'center',
-          marginVertical: AppStyle.hh / 23,
-          marginLeft:AppStyle.ww / 20,
+          marginVertical:AppStyle.hh / 100,
+          marginLeft:AppStyle.ww / 30,
           flexDirection:'column',
           backgroundColor:AppColor.DarkGrayColor,
           borderRadius:AppStyle.ww / 40

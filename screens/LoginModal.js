@@ -82,7 +82,7 @@ export default LoginModal = () => {
     if(userEmail == null || /\S/.test(userEmail) != true)
     { ShowError ("Email : cannot be empty"); return null };
 
-    if(userName.length < 4) { ShowError ("Name : Minimum of 3 characters"); return null };
+    if(userName.length < 3) { ShowError ("Name : Minimum of 3 characters"); return null };
     if(regx.test(userEmail) != true ) { ShowError ("Email : not valid"); return null };
 
     dispatch ( updateDisplayName (userName) );
@@ -135,12 +135,11 @@ export default LoginModal = () => {
     <AppTextInput
     placeholder="Your Email" icon="mail-outline"
     placeholderTextColor={AppColor.LightGrayColor}
-    maxLength={25} returnKeyType="done" value={ userEmail } 
+    maxLength={35} returnKeyType="done" value={ userEmail } 
     onChangeText={TextInputEmail => setUserEmail(TextInputEmail)}
     autoCapitalize="none" autoCorrect={false} keyboardType="email-address" />
 
-    <AppText.SSmallText>to enjoy our services, we have to read your contacts</AppText.SSmallText>
-    <AppText.LGrayText>only contacts that you communicate with, uploads to our server</AppText.LGrayText>
+    <AppText.SSmallText>enjoy our services</AppText.SSmallText>
     <AppButton.PButton onPress={ () => { SetProfileInfo (userName,userEmail) } } >Start</AppButton.PButton>
 
 

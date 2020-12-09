@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
       padding: 2,
       paddingLeft:28,
       color:AppColor.PDarkColor,
-      fontSize:18,
+      fontSize:16,
       justifyContent:'center',
       textAlign:'center'
     }
