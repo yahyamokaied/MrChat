@@ -5,7 +5,7 @@ import {
        } from 'react-native';
 
 import {
-  AppColor, Icon, ChatItem, AppStyle, AppText, LoadingModal
+  AppColor, Icon, ChatItem, AppStyle, AppText, LoadingModal, ImagePicker
       } from '../components';
 
 import MapModal from './MapModal';
@@ -17,6 +17,8 @@ import {
        } from '../redux/actions';
 
 import FastImage from 'react-native-fast-image';
+import RNFS from 'react-native-fs';
+
 
 
 const ChatScreen = ({ navigation }) => {
@@ -32,6 +34,7 @@ const ChatScreen = ({ navigation }) => {
 
 
   const [currentMessage,setCurrentMessage] = useState(null);
+  const [audioBase64,setAudioBase64]=useState(null);
 
   useEffect (() => {
     try
@@ -105,15 +108,70 @@ const ChatScreen = ({ navigation }) => {
     dispatch ( sendVibes ( user, user2 ) );
   };
 
-  const sendGalery = () => {
+  const sendGalery = async () => {
+
+dispatch(startLoading1());
+await ImagePicker.openPicker({
+width: 300,
+height: 300,
+compressImageQuality:0.6,
+cropping: true,
+includeBase64: true
+})
+.then(image => 
+  
+  dispatch( sendMessage (
+    userData.uid, userData.phoneNumber, userData.displayName, user2.phoneNumber, user2.userName,
+    `data:${image.mime};base64,${image.data}`
+    ) )
+
+    //console.log(image.sourceURL)
+
+
+)
+.catch(error => {
+console.log( "ChoosePhoto error : ", error );
+});
+dispatch(stopLoading1());
 
   };
 
-  const sendCamera = () => {
+  const sendCamera = async () => {
+    dispatch(startLoading1());
+      await ImagePicker.openCamera({
+      width: 300,
+      height: 300,
+      compressImageQuality:0.6,
+      cropping: true,
+      includeBase64: true
+      })
+      .then(image => 
 
+        dispatch( sendMessage (
+          userData.uid, userData.phoneNumber, userData.displayName, user2.phoneNumber, user2.userName,
+          `data:${image.mime};base64,${image.data}`
+          ) )
+      
+          //console.log(image.sourceURL)
+      )
+      .catch(error => {
+      console.log( "TakePhoto error : ", error );
+      });
+    dispatch(stopLoading1());
   };
   
   const sendVoice = () => {
+
+
+    RNFS.readFile(audioPath,"base64").then((res)=>setAudioBase64(res))
+
+    const path = `${RNFS.DocumentDirectoryPath}/${attachment}.aac`;
+    RNFS.writeFile(path, yourBase64String, 'base64').then(() => playSound())
+    const playSound = () => {
+    const sound = new Sound(path, '', () => callback(sound))
+    }
+    const callback = () => sound.play(successCallback)
+
 
   };
 
@@ -182,7 +240,7 @@ const ChatScreen = ({ navigation }) => {
       <View style={styles.media} >
       <Icon name="images" style={styles.icongallery}  onPress={ () => sendGalery() }/>
       <Icon name="camera" style={styles.iconmedia}  onPress={ () => sendCamera() }/>
-      <Icon name="mic" style={styles.iconmedia}  onPress={ () => sendVoice() }/>
+{/* <Icon name="mic" style={styles.iconmedia}  onPress={ () => sendVoice() }/> */}
       </View>
       </View>
       <LoadingModal loading={isLoading1} />
@@ -207,14 +265,17 @@ const styles = StyleSheet.create({
       paddingBottom: AppStyle.hh / 100,
   },
   media:{
-    width:AppStyle.ww /2,
-    height:AppStyle.hh /18,
+    width:AppStyle.ww ,
+    height:AppStyle.hh /24,
     justifyContent:'space-between',
     flexDirection:'row',
-    backgroundColor:'transparent',
+    backgroundColor:AppColor.SDarkColor,
     position:'absolute',
-    bottom: AppStyle.hh / 15,
-    alignSelf:'center'
+    bottom: AppStyle.hh / 12.5,
+    alignSelf:'center',
+    paddingHorizontal:AppStyle.ww / 4,
+    borderTopRightRadius:AppStyle.ww /30,
+    borderTopLeftRadius:AppStyle.ww /30,
   },
   sendview: {
       height: AppStyle.hh / 14, 
@@ -222,12 +283,12 @@ const styles = StyleSheet.create({
       width: AppStyle.ww,
       alignSelf:'center',
       borderTopWidth:0.2,
-      marginTop:AppStyle.hh / 40,
       borderColor:AppColor.SLightColor,
       backgroundColor:AppColor.WhiteColor,
       justifyContent:'center',
       alignContent:'center',
       flexDirection: 'row',
+      marginTop:AppStyle.hh / 30
   },
   txtinput: {
       width: AppStyle.ww / 1.35,
@@ -261,13 +322,13 @@ const styles = StyleSheet.create({
     iconmedia:{
       fontSize:AppStyle.IconSize,
       alignSelf:'center',
-      color:AppColor.SLightColor,
+      color:AppColor.WhiteColor,
       paddingVertical: 2
     },
     icongallery:{
       fontSize:AppStyle.IconLarge,
       alignSelf:'center',
-      color:AppColor.SLightColor,
+      color:AppColor.WhiteColor,
       paddingVertical: 2
     },
     icon:{

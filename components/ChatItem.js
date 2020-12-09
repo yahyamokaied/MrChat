@@ -105,6 +105,12 @@ return (
    <AppText.LWhiteText>{message[3]}</AppText.LWhiteText>
    </View>
    :
+   message.startsWith('data:image') == true ?
+   <FastImage style={styles.photo}
+   source={ !message ?
+   require('../assets/profile50.png') : { uri: message } } 
+   />
+   :
     <TouchableOpacity style={ sender == userData.phoneNumber  ?  styles.left : styles.right  }>
     <AppText.PMediumText>{message}</AppText.PMediumText>
     <AppText.LGrayText>{currentTime}</AppText.LGrayText>
@@ -171,6 +177,14 @@ return (
       borderWidth:0.5,
       marginHorizontal: AppStyle.ww / 30,
         },
+        photo: {
+          width: AppStyle.ww / 1.3,
+          height: (AppStyle.hh + AppStyle.ww ) / 5,
+          resizeMode:'contain',
+          alignSelf: 'center',
+          borderRadius: AppStyle.ww / 40,
+          marginVertical:AppStyle.hh / 100
+            },
         maplocation:{
           width:AppStyle.ww / 1.22,
           height:AppStyle.hh / 3.7,

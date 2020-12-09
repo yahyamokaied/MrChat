@@ -448,6 +448,8 @@ PODS:
     - Firebase/Storage (= 7.0.0)
     - React-Core
     - RNFBApp
+  - RNFS (2.16.6):
+    - React
   - RNGestureHandler (1.9.0):
     - React-Core
   - RNImageCropPicker (0.34.1):
@@ -540,6 +542,7 @@ DEPENDENCIES:
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
   - "RNFBStorage (from `../node_modules/@react-native-firebase/storage`)"
+  - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -659,6 +662,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/database"
   RNFBStorage:
     :path: "../node_modules/@react-native-firebase/storage"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNImageCropPicker:
@@ -738,6 +743,7 @@ SPEC CHECKSUMS:
   RNFBAuth: 4b265640beccec5eae5c6b73bda60824bd12ade0
   RNFBDatabase: adf8f71234a3d80370f9b3791476038e136710b5
   RNFBStorage: 4f6ec4a4dd2bce87f71e0f52e9b7062175169783
+  RNFS: 2bd9eb49dc82fa9676382f0585b992c424cd59df
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNImageCropPicker: 39ec170dc53c227ea352b706c76f7960070309a8
   RNScreens: 2ad555d4d9fa10b91bb765ca07fe9b29d59573f0
