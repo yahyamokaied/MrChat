@@ -1,4 +1,4 @@
-import React,{ useState,useEffect,useCallback } from 'react';
+import React,{ useState,useEffect } from 'react';
 import { StyleSheet,TextInput, FlatList,View, Image, ActivityIndicator,Linking } from 'react-native';
 
 import {
@@ -11,6 +11,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { setUser2,startLoading1,stopLoading1,getBlockedUsers,FetchContacts,setContactsActive } from '../redux/actions';
 
 
+import FastImage from 'react-native-fast-image';
 
 
 const ContactScreen = ({ navigation }) => {
@@ -136,7 +137,7 @@ return (
       <LinearGradient colors={[AppColor.SDarkColor,AppColor.SLightColor]}
       style={styles.bgcolor}>
       </LinearGradient>
-      <Image
+      <FastImage
       style={styles.logo}
       source={require("../assets/logo-white.png")}
       />

@@ -1,10 +1,8 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Platform, StatusBar, View,Dimensions } from 'react-native';
+import { StyleSheet,StatusBar, View } from 'react-native';
 
 import * as AppStyle from '../components/AppStyle';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+import * as AppColor from '../components/AppColor';
 
 export default Screen = ( {children} ) => {
     return (
@@ -13,15 +11,11 @@ export default Screen = ( {children} ) => {
         barStyle = "dark-content" 
         hidden = {false}
         translucent = {false}
+        backgroundColor={AppColor.SDarkColor}
         />
          {children}
         </View>
           );
-
-/*           return ( <SafeAreaView style={styles.screen}>
-            <View>{children}</View>
-            </SafeAreaView>
-         ); */
 };
 
 const styles = StyleSheet.create({

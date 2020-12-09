@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from "react";
-import { Modal, StyleSheet, View } from "react-native";
+import { Modal, StyleSheet, View , Platform} from "react-native";
 
 import {
   AppButton, AppColor, AppStyle, AppText, AppTextInput, Icon, ShowError, ImagePicker
@@ -139,7 +139,6 @@ export default LoginModal = () => {
     onChangeText={TextInputEmail => setUserEmail(TextInputEmail)}
     autoCapitalize="none" autoCorrect={false} keyboardType="email-address" />
 
-    <AppText.SSmallText>enjoy our services</AppText.SSmallText>
     <AppButton.PButton onPress={ () => { SetProfileInfo (userName,userEmail) } } >Start</AppButton.PButton>
 
 
@@ -151,16 +150,18 @@ export default LoginModal = () => {
   };
 
 const styles = StyleSheet.create ({
-    mainview: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      },
-  centeredView: {
-    flex: 1,
-    justifyContent: "flex-start",
+  mainview: {
+    width:AppStyle.ww,
+    height:AppStyle.hh,
+    justifyContent: "center",
     alignItems: "center",
-    paddingTop:AppStyle.PageStart,
+  },
+  centeredView: {
+    width:'100%',
+    height:'100%',
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: Platform.OS === 'ios' ? AppStyle.PageStart / 2 : 0,
     backgroundColor:AppColor.SLightColor,
   },
   modalView: {
@@ -168,8 +169,9 @@ const styles = StyleSheet.create ({
     width:AppStyle.ww / 1.2,
     height:AppStyle.hh / 1.4,
     borderRadius: AppStyle.ww / 14,
-    padding: AppStyle.ww / 50,
+    paddingVertical:AppStyle.hh / 90,
     alignItems: "center",
+    justifyContent: "space-between",
     shadowColor: AppColor.SDarkColor,
     shadowOffset: {
       width: 1,
@@ -182,12 +184,11 @@ const styles = StyleSheet.create ({
   imgbg: {
     width: AppStyle.ww / 2,
     height: AppStyle.ww / 2,
-    marginBottom: AppStyle.hh / 60,
     marginTop: AppStyle.hh / 60,
     resizeMode:'cover',
     alignSelf: 'center',
     shadowColor: AppColor.SDarkColor,
-    borderRadius: 15,
+    borderRadius: AppStyle.ww / 30,
     borderWidth:1,
     borderColor:AppColor.WhiteColor,
     shadowOffset: {
@@ -197,12 +198,6 @@ const styles = StyleSheet.create ({
     shadowOpacity: 0.45,
     shadowRadius: 3.84,
     elevation: 5
-  },
-  img: {
-    width: AppStyle.ww / 2,
-    height: AppStyle.ww / 2,
-    resizeMode:'cover',
-    alignSelf: 'center',
   },
     icondown: {
     marginTop: AppStyle.hh / 90,
