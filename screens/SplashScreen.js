@@ -30,7 +30,7 @@ const SplashScreen = ({ navigation }) => {
       transform: [
       {
       scale: position.interpolate({
-      inputRange: [70, 80, 100],
+      inputRange: [53, 63, 100],
       outputRange: [0.1, 0.02, 10]
       })
       }
