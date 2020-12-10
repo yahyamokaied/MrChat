@@ -300,6 +300,7 @@ export const getChat = ( user, user2 ) => {
             ReceiverName:user2name,
             Message:Message,
             TimeStamp:firebase.database.ServerValue.TIMESTAMP,
+            read:false
           });
         });
       } else {

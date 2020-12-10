@@ -435,7 +435,7 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.8)
     - SDWebImageWebPCoder (~> 0.6.1)
-  - RNFBApp (9.0.0):
+  - RNFBApp (10.1.0):
     - Firebase/CoreOnly (= 7.0.0)
     - React-Core
   - RNFBAuth (9.3.5):
@@ -745,7 +745,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: bc2f81cc1df90c267ce9ed30bb2dbc93b945a8ee
   RNCMaskedView: 19a053c6aff7be34bea66fb44e9626f6051d1b8f
   RNFastImage: d4870d58f5936111c56218dbd7fcfc18e65b58ff
-  RNFBApp: 6491c23c55fd26e5af2f9e9dc37f4a0f5e82fcdb
+  RNFBApp: 5355ee727773d5650bdcf678e533de7583369e1d
   RNFBAuth: 4b265640beccec5eae5c6b73bda60824bd12ade0
   RNFBDatabase: adf8f71234a3d80370f9b3791476038e136710b5
   RNFBStorage: 4f6ec4a4dd2bce87f71e0f52e9b7062175169783

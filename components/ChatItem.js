@@ -134,6 +134,7 @@ return (
     viewLeft: {
       flex:1,
       marginVertical: AppStyle.hh / 120,
+      marginHorizontal: AppStyle.ww / 100,
       flexDirection:'row',
       alignSelf:'center',
       justifyContent:'center',
@@ -142,6 +143,7 @@ return (
     viewRight: {
       flex:1,
       marginVertical: AppStyle.hh / 120,
+      marginHorizontal: AppStyle.ww / 100,
       flexDirection: 'row-reverse',
       alignSelf:'center',
       justifyContent:'center',
@@ -151,10 +153,12 @@ return (
       flex:1,
       justifyContent:'center',
       borderRadius: AppStyle.ww / 40,
-      borderColor: AppColor.chatR,
+      borderColor: AppColor.SDarkColor,
       borderWidth:0.5,
-      marginLeft: AppStyle.ww / 20,
       paddingHorizontal: (AppStyle.ww + AppStyle.hh) / 120,
+      marginLeft: AppStyle.ww / 9,
+      marginRight: AppStyle.ww / 50,
+      paddingTop: AppStyle.hh / 150,
     },
     right: {
       flex:1,
@@ -162,8 +166,10 @@ return (
       borderRadius: AppStyle.ww / 40,
       borderColor: AppColor.PLightColor,
       borderWidth:0.5,
-      marginRight: AppStyle.ww / 20,
       paddingHorizontal: (AppStyle.ww + AppStyle.hh) / 120,
+      marginRight: AppStyle.ww / 9,
+      marginLeft: AppStyle.ww / 50,
+      paddingTop: AppStyle.hh / 150,
   },
     img: {
       width: AppStyle.ww / 14,
@@ -173,34 +179,31 @@ return (
       borderColor:AppColor.LightGrayColor,
       borderRadius: AppStyle.ww / 4,
       borderWidth:0.5,
-      marginHorizontal: AppStyle.ww / 30,
+      marginHorizontal: AppStyle.ww / 100,
         },
-        photo: {
-          width:AppStyle.ww / 1.22,
-          height: (AppStyle.hh + AppStyle.ww ) / 5,
-          resizeMode:'contain',
-          alignSelf: 'center',
-          marginLeft:AppStyle.ww / 30,
-          borderRadius: AppStyle.ww / 40,
-          marginVertical:AppStyle.hh / 100
-            },
-        maplocation:{
-          width:AppStyle.ww / 1.22,
-          height:AppStyle.hh / 3.7,
-          alignSelf:'center',
-          marginVertical:AppStyle.hh / 100,
-          marginLeft:AppStyle.ww / 30,
-          flexDirection:'column',
-          backgroundColor:AppColor.DarkGrayColor,
-          borderRadius:AppStyle.ww / 40
+    photo: {
+      width:AppStyle.ww / 1.3,
+      height: (AppStyle.hh + AppStyle.ww ) / 5,
+      alignSelf:'center',
+      marginHorizontal:AppStyle.ww / 20,
+      borderRadius: AppStyle.ww / 40,
         },
-        mapview:{
-          height:'90%',
-          width:'100%',
-          alignSelf:'center',
-        },
-        map: {
-          ...StyleSheet.absoluteFillObject,
-        }
+    maplocation:{
+      width:AppStyle.ww / 1.3,
+      height: (AppStyle.hh + AppStyle.ww ) / 5,
+      alignSelf:'center',
+      marginHorizontal:AppStyle.ww / 20,
+      flexDirection:'column',
+      backgroundColor:AppColor.DarkGrayColor,
+      borderRadius:AppStyle.ww / 40
+    },
+    mapview:{
+      height:'90%',
+      width:'100%',
+      alignSelf:'center',
+    },
+    map: {
+      ...StyleSheet.absoluteFillObject,
+    }
   
   });

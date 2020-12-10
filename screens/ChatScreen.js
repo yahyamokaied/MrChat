@@ -288,7 +288,7 @@ const styles = StyleSheet.create({
       justifyContent:'center',
       alignContent:'center',
       flexDirection: 'row',
-      marginTop:AppStyle.hh / 30
+      marginTop:AppStyle.hh / 20
   },
   txtinput: {
       width: AppStyle.ww / 1.35,
