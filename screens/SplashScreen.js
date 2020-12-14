@@ -1,5 +1,5 @@
 import React,{ useEffect } from 'react';
-import { StyleSheet, View, Animated, Dimensions } from 'react-native';
+import { StyleSheet, View, Animated, Dimensions, Platform } from 'react-native';
 
 import * as AppColor from '../components/AppColor';
 
@@ -12,7 +12,7 @@ const SplashScreen = ({ navigation }) => {
   useEffect(() => {
       Animated.timing(position, {
       toValue: 100,
-      duration : 900,
+      duration : Platform.OS === 'ios' ? 1100 : 900,
       useNativeDriver: true,
       delay: 500
       }).start();

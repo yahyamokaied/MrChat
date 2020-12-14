@@ -41,7 +41,7 @@ const AppNavigator = () => (
 
 
 export default HomeNavigator = () => (
-  <Stack.Navigator mode="modal" screenOptions={{headerShown:false}} initialRouteName="SplashScreen">
+  <Stack.Navigator mode="card" screenOptions={{headerShown:false}} initialRouteName="SplashScreen">
     <Stack.Screen name="SplashScreen" component={SplashScreen} />
     <Stack.Screen name="Back" component={AppNavigator} />
     <Stack.Screen name="Chat" options={{headerShown:true}} component={ChatScreen} />

@@ -22,7 +22,7 @@ return (
     height: AppStyle.hh,
     justifyContent: 'center',
     alignItems:'center',
-    backgroundColor: 'rgba(242,148,132,0.2)',
+    backgroundColor: 'rgba(242,148,132,0.1)',
   }} >
     
   {

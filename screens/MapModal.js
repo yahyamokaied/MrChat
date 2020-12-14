@@ -53,7 +53,8 @@ export default MapModal = () => {
         android: {
           detail: "coarse"
         }
-      }).then(granted => {
+      })
+      .then(granted => {
           if (granted) {
             RNLocation.getLatestLocation({ timeout: 1000 })
             .then(latestLocation => {
@@ -66,9 +67,9 @@ export default MapModal = () => {
               })
               getAddress (latestLocation.latitude,latestLocation.longitude);
             })
+            .catch(error => console.log("error getLatestLocation",error));
           }
         })
-
   };
 
 const getAddress = async ( lat,lng ) => {
@@ -187,19 +188,19 @@ const styles = StyleSheet.create ({
     width: AppStyle.ww / 1.2,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop:50
+    marginTop:AppStyle.hh / 20
    },
    icon:{
      color:AppColor.OfflineColor,
      fontSize:AppStyle.IconSize,
-     marginVertical:5,
+     marginVertical: AppStyle.hh / 120,
      alignSelf:'flex-end',
-     paddingEnd:15
+     paddingRight:AppStyle.hh / 120
    },
   mapview:{
     width:'100%',
     height:'75%',
-    marginBottom: 8
+    marginBottom: AppStyle.hh / 120,
   },
   map: {
     ...StyleSheet.absoluteFillObject,
@@ -207,10 +208,9 @@ const styles = StyleSheet.create ({
   bubble: {
     backgroundColor:AppColor.WhiteColor,
     flexDirection:'column',
-    borderRadius:6,
     borderColor:AppColor.PDarkColor,
     borderWidth:0.5,
-    padding:10
+    padding: (AppStyle.hh + AppStyle.ww) / 200,
   },
   arrow: {
     backgroundColor:'transparent',
