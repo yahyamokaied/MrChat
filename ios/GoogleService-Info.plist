@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>156039827256-quqenp1odms4qarlu4g86anba38qaqr5.apps.googleusercontent.com</string>
+	<string>156039827256-gnuoq2pfgr0605rqhqrlstiujdes1hsj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.156039827256-quqenp1odms4qarlu4g86anba38qaqr5</string>
+	<string>com.googleusercontent.apps.156039827256-gnuoq2pfgr0605rqhqrlstiujdes1hsj</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>156039827256-0qv4mk3uta3g060rcr149srhff9aeerr.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.yahya.Clicks</string>
+	<string>com.yahyamokaied.Clicks</string>
 	<key>PROJECT_ID</key>
 	<string>mrchat-ad947</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:156039827256:ios:6a8fe709c4d2bba84cbbcd</string>
+	<string>1:156039827256:ios:572ce62189311a794cbbcd</string>
 	<key>DATABASE_URL</key>
 	<string>https://mrchat-ad947.firebaseio.com</string>
 </dict>

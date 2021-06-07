@@ -1,3 +1,6 @@
+// ActionTypes
+
+
 export const SET_USER = 'SET_USER';
 export const SET_USERDATA = 'SET_USERDATA';
 export const SET_USERPHOTO = 'SET_USERPHOTO';
