@@ -394,6 +394,8 @@ PODS:
     - React
   - react-native-maps (0.27.1):
     - React
+  - react-native-netinfo (6.2.1):
+    - React-Core
   - react-native-safe-area-context (3.2.0):
     - React-Core
   - React-perflogger (0.64.2)
@@ -460,11 +462,11 @@ PODS:
     - React-cxxreact (= 0.64.2)
     - React-jsi (= 0.64.2)
     - React-perflogger (= 0.64.2)
-  - RNBootSplash (3.2.3):
+  - RNBootSplash (3.2.4):
     - React-Core
   - RNCAsyncStorage (1.15.5):
     - React-Core
-  - RNCMaskedView (0.2.4):
+  - RNCMaskedView (0.2.5):
     - React-Core
   - RNFastImage (8.3.4):
     - React-Core
@@ -561,6 +563,7 @@ DEPENDENCIES:
   - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-location (from `../node_modules/react-native-location`)
   - react-native-maps (from `../node_modules/react-native-maps`)
+  - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -666,6 +669,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-location"
   react-native-maps:
     :path: "../node_modules/react-native-maps"
+  react-native-netinfo:
+    :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-perflogger:
@@ -769,9 +774,10 @@ SPEC CHECKSUMS:
   React-jsinspector: cc614ec18a9ca96fd275100c16d74d62ee11f0ae
   react-native-contacts: 7b5e16196278636030c3fbbb9505543984b01697
   react-native-google-maps: 0a989abda71059db2caa98b9dacca7a8f38a47d0
-  react-native-location: 9c53c0957756f7d70e8fdc76b1c7ed85867c8d0b
+  react-native-location: 5a40ec1cc6abf2f6d94df979f98ec76c3a415681
   react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
-  react-native-safe-area-context: e471852c5ed67eea4b10c5d9d43c1cebae3b231d
+  react-native-netinfo: 3d3769f0d65de15c83a9bf1346f8be71de5a24bf
+  react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   React-perflogger: 25373e382fed75ce768a443822f07098a15ab737
   React-RCTActionSheet: af7796ba49ffe4ca92e7277a5d992d37203f7da5
   React-RCTAnimation: 6a2e76ab50c6f25b428d81b76a5a45351c4d77aa
@@ -784,9 +790,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: 24600e3b1aaa77126989bc58b6747509a1ba14f3
   React-runtimeexecutor: a9904c6d0218fb9f8b19d6dd88607225927668f9
   ReactCommon: 149906e01aa51142707a10665185db879898e966
-  RNBootSplash: 9ee9547d214e05b0434df7698fe3e98b6456f399
-  RNCAsyncStorage: 8324611026e8dc3706f829953aa6e3899f581589
-  RNCMaskedView: 138134c4d8a9421b4f2bf39055a79aa05c2d47b1
+  RNBootSplash: 4844706cbb56a3270556c9b94e59dedadccd47e4
+  RNCAsyncStorage: 56a3355a10b5d660c48c6e37325ac85ebfd09885
+  RNCMaskedView: b7a3b119b1d738734a9d761e4220c6850bb248a3
   RNFastImage: d4870d58f5936111c56218dbd7fcfc18e65b58ff
   RNFBApp: 6491c23c55fd26e5af2f9e9dc37f4a0f5e82fcdb
   RNFBAuth: 4b265640beccec5eae5c6b73bda60824bd12ade0
@@ -805,4 +811,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 68d9a58fa651ffd7e5e8cb23e92034f77c99dec6
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

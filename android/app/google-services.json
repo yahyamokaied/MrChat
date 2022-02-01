@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "156039827256-m8vbi5dhv57qg8h6gue533gqb08fpukh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yahyamokaied.clicks",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "156039827256-vldfdb7glah6pil51dt2tep2h8eq06rl.apps.googleusercontent.com",
           "client_type": 3
         }
