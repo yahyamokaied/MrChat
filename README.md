@@ -1,3 +1,7 @@
+Download my App from App Store:
+https://apps.apple.com/se/app/mrchat/id1529816665
+
+
 <img width="803" alt="Screenshot 2021-06-07 at 14 58 30" src="https://user-images.githubusercontent.com/50097658/121020666-df4d1e00-c7a0-11eb-8045-c3995bf2dda9.png">
 
 
